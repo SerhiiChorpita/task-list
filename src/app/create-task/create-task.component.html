@@ -1,0 +1,7 @@
+<h4>
+  You have {{ taskCount }} {{ taskCount > 1? 'tasks': 'task' }}
+</h4>
+<div>
+  <input type="text" #text>
+  <input type="button" (click)="createTask(text.value)" value="Create">
+</div>

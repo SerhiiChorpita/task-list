@@ -1,0 +1,13 @@
+<div class="container">
+    <app-create-task [taskCount]="count" (changeValue)="valueChange($event)"></app-create-task>
+</div>
+<ul style="list-style: none;">
+    <li class="tasklist-elem" *ngFor="let task of tasks; let index = index">
+        <span>{{ index+1 }}) {{ task.name }}</span>
+        <label>
+            <input type="checkbox" [(ngModel)]="task.isDone">
+            {{task.isDone? 'Done':'In Process'}}
+        </label>
+        <div class="close" (click)="removeTask(index)"><sup>✘</sup></div>
+    </li>
+</ul>
